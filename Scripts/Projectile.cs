@@ -1,12 +1,11 @@
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-	public Vector3 direction = Vector3.up; // Vector3(0, 1, 0)
+    public Vector3 direction = Vector3.up; // Vector3(0, 1, 0)
     public new BoxCollider2D collider;
     public float speed = 20f;
     public System.Action<Projectile> destroyed;
 
-	// берем компоненту, чтобы не делать это каждый раз
     private void Awake() {
         collider = GetComponent<BoxCollider2D>();
     }
@@ -30,7 +29,7 @@ public class Projectile : MonoBehaviour {
         CheckCollision(other);
     }
 
-	private void OnDestroy() {
+    private void OnDestroy() {
         if (destroyed != null) {
             destroyed.Invoke(this);
         }
