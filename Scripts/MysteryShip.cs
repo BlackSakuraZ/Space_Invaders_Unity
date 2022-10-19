@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class MysteryShip : MonoBehaviour {
-	public int score = 300;
+    public int score = 300;
     public float speed = 3f;
     public System.Action<MysteryShip> killed;
     public Vector3 leftDestination;
@@ -25,7 +25,7 @@ public class MysteryShip : MonoBehaviour {
         if (!spawned) {
             return;
         }
-		transform.position += Vector3.right * speed * Time.deltaTime;
+	transform.position += Vector3.right * speed * Time.deltaTime;
         if (transform.position.x >= rightDestination.x) {
             Despawn();
         }
@@ -37,7 +37,7 @@ public class MysteryShip : MonoBehaviour {
 
     private void Despawn() {
         spawned = false;
-		transform.position = leftDestination;
+	transform.position = leftDestination;
         Invoke(nameof(Spawn), 30f);
     }
 
