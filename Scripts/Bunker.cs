@@ -47,12 +47,12 @@ public class Bunker : MonoBehaviour {
         if (other.gameObject.layer == LayerMask.NameToLayer("Invader")) {
             gameObject.SetActive(false);
         }
-		if (other.gameObject.layer == LayerMask.NameToLayer("Missile")
-			|| other.gameObject.layer == LayerMask.NameToLayer("Laser")) {
+	if (other.gameObject.layer == LayerMask.NameToLayer("Missile")
+	    || other.gameObject.layer == LayerMask.NameToLayer("Laser")) {
             killTimes--;
-			if (killTimes <= 0) {
-				gameObject.SetActive(false);
-			}
+	    if (killTimes <= 0) {
+	        gameObject.SetActive(false);
+	    }
         }
     }
 }
