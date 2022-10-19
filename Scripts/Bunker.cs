@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Bunker : MonoBehaviour {
-	int killTimes = 10;
+    public int killTimes = 10;
     public Texture2D texture;
     public SpriteRenderer spriteRenderer;
     public new BoxCollider2D collider;
@@ -14,7 +14,7 @@ public class Bunker : MonoBehaviour {
     }
 
     public void ResetBunker() {
-		killTimes = 10;
+	killTimes = 10;
         Texture2D copy = new Texture2D(texture.width, texture.height, texture.format, false);
         copy.SetPixels(texture.GetPixels());
         copy.Apply();
@@ -26,7 +26,7 @@ public class Bunker : MonoBehaviour {
 
     public bool CheckPoint(Vector3 hitPoint) {
         Vector3 localPoint = transform.InverseTransformPoint(hitPoint);
-		Texture2D texture = spriteRenderer.sprite.texture;
+	Texture2D texture = spriteRenderer.sprite.texture;
         localPoint.x += collider.size.x / 2;
         localPoint.y += collider.size.y / 2;
         int xCoordinate = (int)((localPoint.x / collider.size.x) * texture.width);
