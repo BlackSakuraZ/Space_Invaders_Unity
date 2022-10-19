@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Invader : MonoBehaviour {
     public int score = 10;
-	public Sprite[] animationSprites = new Sprite[0];
+    public Sprite[] animationSprites = new Sprite[0];
     public SpriteRenderer spriteRenderer;
     public int animationFrame;
     public System.Action<Invader> killed;
