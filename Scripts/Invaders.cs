@@ -36,7 +36,7 @@ public class Invaders : MonoBehaviour {
         }
     }
 
-	private void Update() {
+    private void Update() {
         float speed = this.speed.Evaluate(PercentageKilled);
         transform.position += direction * speed * Time.deltaTime;
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
@@ -45,13 +45,13 @@ public class Invaders : MonoBehaviour {
             if (!invader.gameObject.activeInHierarchy) {
                 continue;
             }
-			// разворачиваем движение в другую сторону и сдвигаем на одну строку вниз
+	    // разворачиваем движение в другую сторону и сдвигаем на одну строку вниз
             if ((direction == Vector3.left) && (invader.position.x <= (leftEdge.x + 1f))
-				|| (direction == Vector3.right) && (invader.position.x >= (rightEdge.x - 1f))) {
+		|| (direction == Vector3.right) && (invader.position.x >= (rightEdge.x - 1f))) {
                 direction = new Vector3(-direction.x, 0f, 0f);
-        		Vector3 position = transform.position;
-       		    position.y -= 1f;
-        		transform.position = position;
+        	Vector3 position = transform.position;
+       		position.y -= 1f;
+                transform.position = position;
                 break;
             }
         }
