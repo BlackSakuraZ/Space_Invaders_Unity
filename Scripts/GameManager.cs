@@ -70,7 +70,7 @@ public sealed class GameManager : MonoBehaviour {
         invaders.gameObject.SetActive(false);
         menuText.text = "Game Over\n\nYour Score:\n\n" + score.ToString();
         menuText.color = Color.cyan;
-	    restartButton.GetComponent<Graphic>().color = Color.cyan;
+	restartButton.GetComponent<Graphic>().color = Color.cyan;
         restartButton.GetComponent<Button>().enabled = true;
         foreach (var bunker in bunkers) {
             bunker.gameObject.SetActive(false);
